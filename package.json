@@ -11,6 +11,7 @@
     "debug": "~2.2.0",
     "express": "~4.13.1",
     "googleapis": "^2.1.7",
+    "in-app-purchase": "^0.7.4",
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
     "request": "^2.69.0",

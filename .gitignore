@@ -87,4 +87,5 @@ download
 
 key.json
 
-.vscode/
+### VisualStudioCode ###
+.vscode

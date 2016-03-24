@@ -7,6 +7,55 @@ const request = require('request');
 const readline = require('readline');
 const google = require('googleapis');
 const OAuth2 = google.auth.OAuth2;
+const iap = require('in-app-purchase');
+
+iap.config({applePassword:""});
+
+iap.setup(function (err) {
+    if (err) {
+        return console.error('something went wrong...');
+    }
+    else {
+        console.log('iap init done');
+    }
+});
+
+/* POST validation ios */
+router.post('/appleiap/receipt/validation', function(req, res, next) {
+
+    let parseRawRecipt = JSON.parse(req.body.RawReceipt);
+    
+    if(req.body.RawReceipt === null 
+      || req.body.RawReceipt === undefined) {
+        res.send({result:false});
+        return;
+    }
+    
+    if(parseRawRecipt['transaction-receipt'] === undefined) {
+        res.send(
+            {result:false, 
+            error:'receipt invalid transaction receipt'});
+    }
+
+    iap.validate(
+        iap.APPLE, 
+        parseRawRecipt['transaction-receipt'], 
+        function (err, appleRes) {
+                
+            //에러 발생시 에러 전달
+            if (err) {
+                res.send({result:false, error:`${err}`});
+                return;
+            }
+            //검증되었는지 확인
+            if (iap.isValidated(appleRes)) {
+                res.send({result:true});
+            }
+            else {
+                res.send({result:false});
+            }
+        });
+});
 
 const client_id = process.env.clientid || '앞에서 얻은 CLIENT_ID';
 const client_secret = process.env.clientsecret || '앞에서 얻은 CLIENT_SECRET';

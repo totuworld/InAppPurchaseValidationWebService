@@ -5,7 +5,7 @@
 			"name": "Launch",
 			"type": "node",
 			"request": "launch",
-			"program": "${workspaceRoot}/bin/www",
+			"program": "${workspaceRoot}/server.js",
 			"stopOnEntry": false,
 			"args": [],
 			"cwd": "${workspaceRoot}",
@@ -15,7 +15,8 @@
 				"--nolazy"
 			],
 			"env": {
-				"NODE_ENV": "development"
+				"NODE_ENV": "development",
+				"DEBUG":"GoogleIABValidation:server"
 			},
 			"externalConsole": false,
 			"sourceMaps": false,

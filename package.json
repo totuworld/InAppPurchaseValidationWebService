@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./build/index.js",
     "build": "npx tsc",
-    "dev": "DEBUG='InApp:*' ts-node --project tsconfig.json ./src/index.ts",
+    "dev": "DEBUG='InApp:*' nodemon --watch 'src/**/*.ts' --exec 'ts-node --project tsconfig.json' ./src/index.ts",
     "debug": "DEBUG='InApp:*' node -r ts-node/register --inspect=9229 ./src/index.ts"
   },
   "dependencies": {
@@ -26,6 +26,7 @@
     "@types/in-app-purchase": "^1.10.0",
     "@types/node": "^11.11.5",
     "@types/request": "^2.48.3",
+    "nodemon": "^1.19.2",
     "prettier": "^1.16.4",
     "source-map-loader": "^0.2.4",
     "ts-node": "^8.3.0",

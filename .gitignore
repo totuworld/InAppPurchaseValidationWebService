@@ -1,3 +1,4 @@
+.DS_Store
 # Created by https://www.gitignore.io
 
 ### Node ###
@@ -89,3 +90,4 @@ key.json
 
 ### VisualStudioCode ###
 .vscode
+build/

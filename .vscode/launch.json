@@ -23,16 +23,10 @@
 			"outDir": null
 		},
 		{
-			"name": "Attach",
-			"type": "node",
-			"request": "attach",
-			"port": 5858,
-			"address": "localhost",
-			"restart": false,
-			"sourceMaps": false,
-			"outDir": null,
-			"localRoot": "${workspaceRoot}",
-			"remoteRoot": null
-		}
+      "type": "node",
+      "request": "attach",
+      "name": "Attach",
+      "port": 9229
+    }
 	]
 }

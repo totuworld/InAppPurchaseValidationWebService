@@ -27,7 +27,7 @@ uri의 `[hostname]`부분을 자신의 주소로 치환하여 요청한다.
 > 단, 꼭 RawReceipt를 body에 함께 요청해야한다.
 
 ### 구글 인앱 영수증 요청
-POST [hostname]/validation/iap/google/validation
+POST [hostname]/validation/iap/google
 
 #### body 포함 내용
 * RawReceipt : json 형식으로 작성된 영수증
@@ -48,7 +48,7 @@ POST [hostname]/validation/iap/google/validation
 
 
 ### 애플 인앱영수증 요청
-POST [hostname]//validation/iap/apple/validation
+POST [hostname]/validation/iap/apple
 
 #### body 포함 내용
 * RawReceipt : json 형식으로 작성된 영수증

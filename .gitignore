@@ -91,3 +91,5 @@ key.json
 ### VisualStudioCode ###
 .vscode
 build/
+dist/
+package-lock.json.bak

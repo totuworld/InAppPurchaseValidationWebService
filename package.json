@@ -1,10 +1,11 @@
 {
   "name": "in-app-receipt-validation",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node ./build/index.js",
     "build": "npx tsc",
+    "packing": "npm run build && ts-node shellwork.ts",
     "dev": "DEBUG='InApp:*' nodemon --watch 'src/**/*.ts' --exec 'ts-node --project tsconfig.json' ./src/index.ts",
     "debug": "DEBUG='InApp:*' node -r ts-node/register --inspect=9229 ./src/index.ts"
   },
@@ -17,17 +18,24 @@
     "express": "^4.16.4",
     "googleapis": "^43.0.0",
     "in-app-purchase": "^1.11.4",
-    "inversify": "^5.0.1"
+    "inversify": "^5.0.1",
+    "luxon": "^1.17.3"
   },
   "devDependencies": {
+    "@types/archiver": "^3.0.0",
     "@types/boom": "^7.2.1",
     "@types/debug": "^4.1.2",
     "@types/express": "^4.16.1",
     "@types/in-app-purchase": "^1.10.0",
+    "@types/luxon": "^1.15.2",
     "@types/node": "^11.11.5",
     "@types/request": "^2.48.3",
+    "@types/shelljs": "^0.8.5",
+    "archiver": "^3.1.1",
+    "git-rev-sync": "^1.12.0",
     "nodemon": "^1.19.2",
     "prettier": "^1.16.4",
+    "shelljs": "^0.8.3",
     "source-map-loader": "^0.2.4",
     "ts-node": "^8.3.0",
     "tslint": "^5.20.0",

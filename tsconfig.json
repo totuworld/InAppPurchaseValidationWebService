@@ -37,6 +37,7 @@
     "server/**",
     "build/**",
     "**/*.json",
-    "migrations/**"
+    "migrations/**",
+    "shellwork.ts"
   ]
 }

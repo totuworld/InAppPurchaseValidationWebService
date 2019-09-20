@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./build/index.js",
+    "start": "node ./build/server.js",
     "build": "npx tsc",
     "packing": "npm run build && ts-node shellwork.ts",
-    "dev": "DEBUG='InApp:*' nodemon --watch 'src/**/*.ts' --exec 'ts-node --project tsconfig.json' ./src/index.ts",
-    "debug": "DEBUG='InApp:*' node -r ts-node/register --inspect=9229 ./src/index.ts"
+    "dev": "DEBUG='InApp:*' nodemon --watch 'src/**/*.ts' --exec 'ts-node --project tsconfig.json' ./src/server.ts",
+    "debug": "DEBUG='InApp:*' node -r ts-node/register --inspect=9229 ./src/server.ts",
+    "deployFunctions": "firebase deploy --only functions"
+  },
+  "engines": {
+    "node": "10"
   },
   "dependencies": {
     "ajv": "^6.10.0",
@@ -16,6 +20,7 @@
     "boom": "^7.3.0",
     "debug": "^4.1.1",
     "express": "^4.16.4",
+    "firebase-functions": "^3.2.0",
     "googleapis": "^43.0.0",
     "in-app-purchase": "^1.11.4",
     "inversify": "^5.0.1",
@@ -32,6 +37,7 @@
     "@types/request": "^2.48.3",
     "@types/shelljs": "^0.8.5",
     "archiver": "^3.1.1",
+    "firebase-tools": "^7.3.2",
     "git-rev-sync": "^1.12.0",
     "nodemon": "^1.19.2",
     "prettier": "^1.16.4",
